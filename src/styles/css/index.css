@@ -1,0 +1,363 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap");
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+img,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+button,
+input,
+a {
+  font-family: inherit;
+}
+
+.btn {
+  border: 0;
+  background: 0;
+  cursor: pointer;
+}
+
+.flexbox {
+  display: flex;
+}
+
+.grid-flow {
+  display: grid;
+}
+
+body {
+  background-image: radial-gradient(at top, hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+  font-family: "Barlow Semi Condensed", sans-serif;
+}
+
+.wrapper {
+  min-height: 100vh;
+  justify-items: center;
+  align-content: space-between;
+  padding-top: 2em;
+  color: hsl(229, 25%, 31%);
+}
+
+.header {
+  width: min(700px, 85%);
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8em 1em;
+  border: 3px solid hsl(217, 16%, 45%);
+  border-radius: 8px;
+}
+.header img {
+  height: 60px;
+}
+.header .scoreboard {
+  justify-items: center;
+  padding: 0.5em 1.2em;
+  background-color: white;
+  border-radius: 5px;
+}
+.header .scoreboard p {
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-size: 0.9em;
+  color: hsl(229, 64%, 46%);
+}
+.header .scoreboard h1 {
+  font-size: 2.5em;
+}
+
+.main {
+  background-image: url("../../images/bg-pentagon.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 200px;
+  height: 250px;
+  position: relative;
+}
+.main .img-container {
+  background-color: white;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  height: 70px;
+  padding: 1em;
+  border-radius: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+}
+.main .lizard {
+  box-shadow: 0 0 0 10px hsl(261, 73%, 60%);
+  bottom: 0;
+  left: 20%;
+}
+.main .paper {
+  box-shadow: 0 0 0 10px hsl(230, 89%, 62%);
+  left: 100%;
+  top: 27%;
+}
+.main .rock {
+  box-shadow: 0 0 0 10px hsl(349, 71%, 52%);
+  bottom: 0;
+  left: 80%;
+}
+.main .spock {
+  box-shadow: 0 0 0 10px hsl(189, 59%, 53%);
+  left: 0;
+  top: 27%;
+}
+.main .scissors {
+  box-shadow: 0 0 0 10px hsl(40, 84%, 53%);
+  left: 50%;
+}
+
+.rules-btn {
+  color: white;
+  border: 3px solid hsl(217, 16%, 45%);
+  padding: 0.5em 2.5em;
+  border-radius: 10px;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  align-self: end;
+  margin-bottom: 5vh;
+}
+
+.rules-page {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
+  align-items: center;
+  justify-items: center;
+}
+.rules-page h1 {
+  text-transform: uppercase;
+}
+
+.game-section {
+  min-width: min(700px, 85%);
+  grid-template-columns: auto auto;
+  grid-row: 2/4;
+  justify-content: space-between;
+  color: white;
+  text-transform: uppercase;
+  height: 175px;
+  row-gap: 2em;
+}
+.game-section .player,
+.game-section .computer {
+  justify-items: center;
+  align-content: space-between;
+  height: 160px;
+}
+.game-section .player h1,
+.game-section .computer h1 {
+  font-size: 1em;
+  letter-spacing: 2px;
+}
+.game-section .computer .blank {
+  width: 90px;
+  margin-top: 15px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background-color: hsl(229, 25%, 31%);
+}
+.game-section .result {
+  order: 3;
+  grid-column: 1/3;
+  justify-items: center;
+  gap: 1em;
+}
+.game-section .result h1,
+.game-section .result .restart-btn {
+  text-transform: uppercase;
+}
+.game-section .result h1 {
+  font-size: 4em;
+  letter-spacing: 2px;
+}
+.game-section .result .restart-btn {
+  font-size: 1.2em;
+  color: hsl(229, 25%, 31%);
+  background-color: white;
+  border-radius: 8px;
+  padding: 0.8em 3em;
+  letter-spacing: 2px;
+}
+.game-section .img-container {
+  background-color: white;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  height: 120px;
+  padding: 2em;
+  border-radius: 50%;
+}
+.game-section .lizard {
+  box-shadow: inset 0 0 0 15px hsl(261, 73%, 60%);
+}
+.game-section .paper {
+  box-shadow: inset 0 0 0 15px hsl(230, 89%, 62%);
+}
+.game-section .rock {
+  box-shadow: inset 0 0 0 15px hsl(349, 71%, 52%);
+}
+.game-section .spock {
+  box-shadow: inset 0 0 0 15px hsl(189, 59%, 53%);
+}
+.game-section .scissors {
+  box-shadow: inset 0 0 0 15px hsl(40, 84%, 53%);
+}
+
+@media (min-width: 880px) {
+  .header {
+    border-radius: 12px;
+  }
+  .header img {
+    height: 100px;
+  }
+  .header .scoreboard {
+    padding: 0.5em 2.6em;
+  }
+  .header .scoreboard p {
+    font-size: 1.1em;
+  }
+  .header .scoreboard h1 {
+    font-size: 3.2em;
+  }
+  .main {
+    width: 320px;
+    height: 320px;
+  }
+  .main .img-container {
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    transition: box-shadow 0.3s;
+  }
+  .main .img-container:hover {
+    box-shadow: 0 0 0 20px;
+  }
+  .main .lizard {
+    box-shadow: 0 0 0 15px hsl(261, 73%, 60%);
+    bottom: -10%;
+  }
+  .main .paper {
+    box-shadow: 0 0 0 15px hsl(230, 89%, 62%);
+  }
+  .main .rock {
+    box-shadow: 0 0 0 15px hsl(349, 71%, 52%);
+    bottom: -10%;
+  }
+  .main .spock {
+    box-shadow: 0 0 0 15px hsl(189, 59%, 53%);
+  }
+  .main .scissors {
+    box-shadow: 0 0 0 15px hsl(40, 84%, 53%);
+    top: -10%;
+  }
+  .rules-btn {
+    justify-self: end;
+    margin-right: 2em;
+    transition: transform 0.3s;
+  }
+  .rules-btn:hover {
+    transform: scale(1.1);
+  }
+  .rules-page {
+    width: 400px;
+    height: 450px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 10px;
+    grid-template-columns: 1fr 1fr;
+    padding: 0em 1.5em;
+  }
+  .rules-page h1 {
+    justify-self: start;
+    margin: 0;
+    padding: 0;
+  }
+  .rules-page .rules-img {
+    order: 3;
+    grid-column: 1/3;
+    align-self: start;
+  }
+  .rules-page .close-btn {
+    justify-self: end;
+  }
+  .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  .game-section {
+    height: 350px;
+    grid-row: unset;
+    column-gap: 5em;
+    grid-template-columns: unset;
+    grid-auto-flow: column;
+    margin-top: 2em;
+  }
+  .game-section .player,
+  .game-section .computer {
+    height: 320px;
+  }
+  .game-section .player h1,
+  .game-section .computer h1 {
+    font-size: 1.5em;
+    order: -1;
+  }
+  .game-section .computer .blank {
+    width: 190px;
+    margin-bottom: 30px;
+  }
+  .game-section .result {
+    order: unset;
+    align-self: center;
+    grid-column: unset;
+  }
+  .game-section .result .restart-btn {
+    transition: transform 0.3s;
+  }
+  .game-section .result .restart-btn:hover {
+    transform: scale(1.1);
+  }
+  .game-section .img-container {
+    width: 250px;
+    height: 250px;
+    box-shadow: inset 0 0 0 30px hsl(40, 84%, 53%);
+  }
+  .game-section .img-container img {
+    height: 100px;
+  }
+  .game-section .lizard {
+    box-shadow: inset 0 0 0 30px hsl(261, 73%, 60%);
+    bottom: -10%;
+  }
+  .game-section .paper {
+    box-shadow: inset 0 0 0 30px hsl(230, 89%, 62%);
+  }
+  .game-section .rock {
+    box-shadow: inset 0 0 0 30px hsl(349, 71%, 52%);
+    bottom: -10%;
+  }
+  .game-section .spock {
+    box-shadow: inset 0 0 0 30px hsl(189, 59%, 53%);
+  }
+  .game-section .scissors {
+    box-shadow: inset 0 0 0 30px hsl(40, 84%, 53%);
+    top: -10%;
+  }
+}/*# sourceMappingURL=index.css.map */

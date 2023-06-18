@@ -1,0 +1,35 @@
+@use "_vars" as *;
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+img,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+button,
+input,
+a {
+  font-family: inherit;
+}
+
+.btn {
+  border: 0;
+  background: 0;
+  cursor: pointer;
+}
+
+.flexbox {
+  display: flex;
+}
+
+.grid-flow {
+  display: grid;
+}

@@ -1,0 +1,386 @@
+@use "_base";
+@use "_vars" as *;
+
+body {
+  background-image: $bg-gradient;
+  font-family: $font-family-default;
+}
+
+.wrapper {
+  min-height: 100vh;
+  justify-items: center;
+  align-content: space-between;
+  padding-top: 2em;
+  color: $text-color;
+}
+
+.header {
+  width: min(700px, 85%);
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8em 1em;
+  border: 3px solid $outline-color;
+  border-radius: 8px;
+
+  img {
+    height: 60px;
+  }
+
+  .scoreboard {
+    justify-items: center;
+    padding: 0.5em 1.2em;
+    background-color: white;
+    border-radius: 5px;
+
+    p {
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-size: 0.9em;
+      color: $score-text-color;
+    }
+
+    h1 {
+      font-size: 2.5em;
+    }
+  }
+}
+
+.main {
+  background-image: url("../../images/bg-pentagon.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 200px;
+  height: 250px;
+  position: relative;
+
+  .img-container {
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    height: 70px;
+    padding: 1em;
+    border-radius: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+  }
+
+  .lizard {
+    box-shadow: 0 0 0 10px $lizard-color;
+    bottom: 0;
+    left: 20%;
+  }
+
+  .paper {
+    box-shadow: 0 0 0 10px $paper-color;
+    left: 100%;
+    top: 27%;
+  }
+
+  .rock {
+    box-shadow: 0 0 0 10px $rock-color;
+    bottom: 0;
+    left: 80%;
+  }
+
+  .spock {
+    box-shadow: 0 0 0 10px $spock-color;
+    left: 0;
+    top: 27%;
+  }
+
+  .scissors {
+    box-shadow: 0 0 0 10px $scissors-color;
+    left: 50%;
+  }
+}
+
+.rules-btn {
+  color: white;
+  border: 3px solid $outline-color;
+  padding: 0.5em 2.5em;
+  border-radius: 10px;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  align-self: end;
+  margin-bottom: 5vh;
+}
+
+.rules-page {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
+  align-items: center;
+  justify-items: center;
+
+  h1 {
+    text-transform: uppercase;
+  }
+}
+
+.game-section {
+  min-width: min(700px, 85%);
+  grid-template-columns: auto auto;
+  grid-row: 2 / 4;
+  justify-content: space-between;
+  color: white;
+  text-transform: uppercase;
+  height: 175px;
+  row-gap: 2em;
+
+  .player,
+  .computer {
+    justify-items: center;
+    align-content: space-between;
+    height: 160px;
+
+    h1 {
+      font-size: 1em;
+      letter-spacing: 2px;
+    }
+  }
+
+  .computer .blank {
+    width: 90px;
+    margin-top: 15px;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    background-color: $text-color;
+  }
+
+  .result {
+    order: 3;
+    grid-column: 1 / 3;
+    justify-items: center;
+    gap: 1em;
+
+    h1,
+    .restart-btn {
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: 4em;
+      letter-spacing: 2px;
+    }
+
+    .restart-btn {
+      font-size: 1.2em;
+      color: $text-color;
+      background-color: white;
+      border-radius: 8px;
+      padding: 0.8em 3em;
+      letter-spacing: 2px;
+    }
+  }
+
+  .img-container {
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 120px;
+    padding: 2em;
+    border-radius: 50%;
+  }
+
+  .lizard {
+    box-shadow: inset 0 0 0 15px $lizard-color;
+  }
+
+  .paper {
+    box-shadow: inset 0 0 0 15px $paper-color;
+  }
+
+  .rock {
+    box-shadow: inset 0 0 0 15px $rock-color;
+  }
+
+  .spock {
+    box-shadow: inset 0 0 0 15px $spock-color;
+  }
+
+  .scissors {
+    box-shadow: inset 0 0 0 15px $scissors-color;
+  }
+}
+
+@media (min-width: 880px) {
+  .header {
+    border-radius: 12px;
+
+    img {
+      height: 100px;
+    }
+
+    .scoreboard {
+      padding: 0.5em 2.6em;
+
+      p {
+        font-size: 1.1em;
+      }
+
+      h1 {
+        font-size: 3.2em;
+      }
+    }
+  }
+
+  .main {
+    width: 320px;
+    height: 320px;
+
+    .img-container {
+      width: 100px;
+      height: 100px;
+      cursor: pointer;
+      transition: box-shadow 0.3s;
+    }
+
+    .img-container:hover{
+      box-shadow: 0 0 0 20px;
+    }
+
+    .lizard {
+      box-shadow: 0 0 0 15px $lizard-color;
+      bottom: -10%;
+    }
+
+    .paper {
+      box-shadow: 0 0 0 15px $paper-color;
+    }
+
+    .rock {
+      box-shadow: 0 0 0 15px $rock-color;
+      bottom: -10%;
+    }
+
+    .spock {
+      box-shadow: 0 0 0 15px $spock-color;
+    }
+
+    .scissors {
+      box-shadow: 0 0 0 15px $scissors-color;
+      top: -10%;
+    }
+  }
+
+  .rules-btn {
+    justify-self: end;
+    margin-right: 2em;
+    transition: transform 0.3s;
+  }
+
+  .rules-btn:hover{
+    transform: scale(1.1);
+  }
+
+  .rules-page {
+    width: 400px;
+    height: 450px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 10px;
+    grid-template-columns: 1fr 1fr;
+    padding: 0em 1.5em;
+
+    h1 {
+      justify-self: start;
+      margin: 0;
+      padding: 0;
+    }
+
+    .rules-img {
+      order: 3;
+      grid-column: 1 / 3;
+      align-self: start;
+    }
+
+    .close-btn {
+      justify-self: end;
+    }
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba($color: #000000, $alpha: 0.5);
+  }
+
+  .game-section {
+    height: 350px;
+    grid-row: unset;
+    column-gap: 5em;
+    grid-template-columns: unset;
+    grid-auto-flow: column;
+    margin-top: 2em;
+
+    .player,
+    .computer {
+      height: 320px;
+
+      h1 {
+        font-size: 1.5em;
+        order: -1;
+      }
+    }
+
+    .computer .blank {
+      width: 190px;
+      margin-bottom: 30px;
+    }
+
+    .result {
+      order: unset;
+      align-self: center;
+      grid-column: unset;
+
+      .restart-btn{
+        transition: transform 0.3s;
+      }
+
+      .restart-btn:hover{
+        transform: scale(1.1);
+      }
+    }
+
+    .img-container {
+      width: 250px;
+      height: 250px;
+      box-shadow: inset 0 0 0 30px $scissors-color;
+
+      img {
+        height: 100px;
+      }
+    }
+
+    .lizard {
+      box-shadow: inset 0 0 0 30px $lizard-color;
+      bottom: -10%;
+    }
+
+    .paper {
+      box-shadow: inset 0 0 0 30px $paper-color;
+    }
+
+    .rock {
+      box-shadow: inset 0 0 0 30px $rock-color;
+      bottom: -10%;
+    }
+
+    .spock {
+      box-shadow: inset 0 0 0 30px $spock-color;
+    }
+
+    .scissors {
+      box-shadow: inset 0 0 0 30px $scissors-color;
+      top: -10%;
+    }
+  }
+}
